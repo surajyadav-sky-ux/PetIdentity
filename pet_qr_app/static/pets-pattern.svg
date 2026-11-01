@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
+  <rect width="420" height="420" fill="#241b4e"/>
+  <g font-size="40" font-family="sans-serif">
+    <text x="10"  y="50"  fill="#f97316" transform="rotate(-10 30 40)">🐶</text>
+    <text x="90"  y="35"  fill="#38bdf8" transform="rotate(8 110 25)">🐱</text>
+    <text x="170" y="55"  fill="#f472b6" transform="rotate(-6 190 45)">🐰</text>
+    <text x="250" y="40"  fill="#facc15" transform="rotate(12 270 30)">🐶</text>
+    <text x="330" y="55"  fill="#94a3b8" transform="rotate(-8 350 45)">🐱</text>
+
+    <text x="30"  y="130" fill="#38bdf8" transform="rotate(10 50 120)">🐾</text>
+    <text x="110" y="120" fill="#f97316" transform="rotate(-12 130 110)">🐰</text>
+    <text x="190" y="135" fill="#f472b6" transform="rotate(6 210 125)">🐶</text>
+    <text x="270" y="115" fill="#facc15" transform="rotate(-10 290 105)">🐱</text>
+    <text x="350" y="135" fill="#38bdf8" transform="rotate(8 370 125)">🐾</text>
+
+    <text x="10"  y="210" fill="#f472b6" transform="rotate(-8 30 200)">🐱</text>
+    <text x="90"  y="200" fill="#facc15" transform="rotate(10 110 190)">🐶</text>
+    <text x="170" y="215" fill="#38bdf8" transform="rotate(-6 190 205)">🐾</text>
+    <text x="250" y="195" fill="#f97316" transform="rotate(12 270 185)">🐰</text>
+    <text x="330" y="215" fill="#f472b6" transform="rotate(-10 350 205)">🐶</text>
+
+    <text x="30"  y="290" fill="#facc15" transform="rotate(8 50 280)">🐰</text>
+    <text x="110" y="280" fill="#38bdf8" transform="rotate(-10 130 270)">🐶</text>
+    <text x="190" y="295" fill="#f97316" transform="rotate(6 210 285)">🐱</text>
+    <text x="270" y="275" fill="#f472b6" transform="rotate(-12 290 265)">🐾</text>
+    <text x="350" y="295" fill="#facc15" transform="rotate(10 370 285)">🐰</text>
+
+    <text x="10"  y="370" fill="#38bdf8" transform="rotate(-6 30 360)">🐾</text>
+    <text x="90"  y="360" fill="#f472b6" transform="rotate(10 110 350)">🐱</text>
+    <text x="170" y="375" fill="#facc15" transform="rotate(-8 190 365)">🐶</text>
+    <text x="250" y="355" fill="#38bdf8" transform="rotate(12 270 345)">🐰</text>
+    <text x="330" y="375" fill="#f97316" transform="rotate(-10 350 365)">🐱</text>
+  </g>
+</svg>

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Login - PetIdentity{% endblock %}
+{% block content %}
+<div class="pi-auth-wrapper">
+  <div class="row justify-content-center w-100">
+    <div class="col-md-6 col-lg-5">
+
+      <div class="pi-login-stage">
+        <div class="pi-login-title">Welcome to PetIdentity 🐾</div>
+
+        <div class="pi-dog-walker">
+          <svg class="pi-dog-bounce" viewBox="0 0 140 110" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="dogBodyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#e8af7c"/>
+                <stop offset="100%" stop-color="#c17a3e"/>
+              </linearGradient>
+            </defs>
+
+            <!-- tail -->
+            <path d="M108 52 Q130 30 124 60 Q120 70 107 60 Z" fill="#c17a3e"/>
+
+            <!-- back (inner) legs - static -->
+            <rect x="88" y="72" width="11" height="24" rx="5.5" fill="#a9673a"/>
+            <rect x="40" y="72" width="11" height="24" rx="5.5" fill="#a9673a"/>
+            <ellipse cx="93.5" cy="97" rx="7.5" ry="4.5" fill="#8b5a2b"/>
+            <ellipse cx="45.5" cy="97" rx="7.5" ry="4.5" fill="#8b5a2b"/>
+
+            <!-- body -->
+            <ellipse cx="72" cy="63" rx="42" ry="25" fill="url(#dogBodyGrad)"/>
+            <ellipse cx="78" cy="75" rx="24" ry="12" fill="#f3d9bb" opacity="0.5"/>
+
+            <!-- front (outer) legs - animated walk -->
+            <rect class="pi-dog-leg back" x="98" y="70" width="11" height="26" rx="5.5" fill="#c17a3e"/>
+            <rect class="pi-dog-leg" x="30" y="70" width="11" height="26" rx="5.5" fill="#c17a3e"/>
+            <ellipse cx="103.5" cy="97" rx="7.5" ry="4.5" fill="#a9673a"/>
+            <ellipse cx="35.5" cy="97" rx="7.5" ry="4.5" fill="#a9673a"/>
+
+            <!-- head -->
+            <circle cx="28" cy="40" r="23" fill="url(#dogBodyGrad)"/>
+
+            <!-- floppy ear -->
+            <path d="M14 24 Q-2 30 6 54 Q18 52 19 34 Z" fill="#a9673a"/>
+
+            <!-- collar -->
+            <path d="M14 56 Q28 66 46 56" stroke="#e85d5d" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <circle cx="30" cy="63" r="4.5" fill="#ffd54f" stroke="#c9a227" stroke-width="1"/>
+
+            <!-- snout -->
+            <ellipse cx="9" cy="46" rx="12" ry="9" fill="#f6dcb8"/>
+            <ellipse cx="0" cy="44" rx="4" ry="3.3" fill="#3a2410"/>
+
+            <!-- mouth + tongue -->
+            <path d="M5 53 Q11 58 17 53" stroke="#6b3e1e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <path d="M10 55 q0 8 6 5 q-2 -5 -6 -5 Z" fill="#ff8ba0"/>
+
+            <!-- eye -->
+            <circle cx="24" cy="33" r="3.4" fill="#2a1a0e"/>
+            <circle cx="25.4" cy="31.7" r="1.1" fill="#fff"/>
+
+            <!-- blush -->
+            <ellipse cx="15" cy="42" rx="3.5" ry="2.2" fill="#f4a89a" opacity="0.55"/>
+          </svg>
+        </div>
+
+        <div class="pi-login-fields">
+          <h5 class="mb-3 text-center">Login</h5>
+          <form method="POST">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" required>
+            </div>
+            <div class="text-end mb-3">
+              <a href="{{ url_for('forgot_password') }}" class="small">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+          <p class="mt-3 mb-0 text-center">No account? <a href="{{ url_for('register') }}">Register here</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

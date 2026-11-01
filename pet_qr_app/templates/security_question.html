@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Security Question - PetIdentity{% endblock %}
+{% block content %}
+<div class="pi-auth-wrapper">
+  <div class="row justify-content-center w-100">
+    <div class="col-md-5">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <div class="pi-auth-icon">❓</div>
+          <h3 class="mb-2 text-center">Security Question</h3>
+          <p class="text-center mb-3">{{ security_question }}</p>
+          <form method="POST">
+            <div class="mb-3">
+              <label class="form-label">Your Answer</label>
+              <input type="text" name="security_answer" class="form-control" required autofocus>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Verify</button>
+          </form>
+          <p class="mt-3 mb-0 text-center"><a href="{{ url_for('forgot_password') }}">&laquo; Start over</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

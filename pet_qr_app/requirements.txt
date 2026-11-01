@@ -1,0 +1,4 @@
+Flask>=3.0
+qrcode>=7.4
+pypng>=0.20220715
+Werkzeug>=3.0

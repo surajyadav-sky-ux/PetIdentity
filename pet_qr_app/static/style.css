@@ -1,0 +1,280 @@
+/* ============ PetIdentity — Global Theme ============ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --pi-primary: #6366f1;
+    --pi-primary-dark: #4f46e5;
+    --pi-accent: #14b8a6;
+    --pi-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    --pi-bg: #f4f5fb;
+    --pi-card-radius: 18px;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--pi-bg);
+    background-image:
+        radial-gradient(circle at 10% 10%, rgba(99,102,241,0.08) 0, transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(236,72,153,0.08) 0, transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(20,184,166,0.08) 0, transparent 40%);
+    min-height: 100vh;
+}
+
+/* ---------- Navbar ---------- */
+.navbar.pi-navbar {
+    background: var(--pi-gradient) !important;
+    box-shadow: 0 4px 20px rgba(99,102,241,0.25);
+}
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    font-size: 1.4rem;
+}
+.navbar-brand .pi-logo-icon {
+    display: inline-block;
+    animation: pi-wag 2.2s ease-in-out infinite;
+}
+
+@keyframes pi-wag {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+}
+
+/* ---------- Cards / general ---------- */
+.card {
+    border: none;
+    border-radius: var(--pi-card-radius);
+    box-shadow: 0 4px 24px rgba(30, 30, 60, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: pi-fade-up 0.5s ease both;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(30, 30, 60, 0.16);
+}
+
+@keyframes pi-fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* stagger pet cards on dashboard */
+.row.row-cols-md-3 > .col:nth-child(1) .card { animation-delay: 0.05s; }
+.row.row-cols-md-3 > .col:nth-child(2) .card { animation-delay: 0.15s; }
+.row.row-cols-md-3 > .col:nth-child(3) .card { animation-delay: 0.25s; }
+.row.row-cols-md-3 > .col:nth-child(4) .card { animation-delay: 0.35s; }
+.row.row-cols-md-3 > .col:nth-child(5) .card { animation-delay: 0.45s; }
+.row.row-cols-md-3 > .col:nth-child(6) .card { animation-delay: 0.55s; }
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+    background: var(--pi-gradient);
+    border: none;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(99,102,241,0.35);
+}
+.btn-success {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    border: none;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-success:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(34,197,94,0.35); }
+
+/* ---------- Auth pages ---------- */
+.pi-auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('pets-pattern.svg');
+    background-repeat: repeat;
+    background-size: 280px 280px;
+    margin: -1.5rem calc(-50vw + 50%) 0 calc(-50vw + 50%);
+    padding: 2rem calc(50vw - 50%);
+}
+.pi-auth-wrapper .card {
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(2px);
+}
+.pi-auth-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--pi-gradient);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 1rem auto;
+    animation: pi-pop 0.5s ease both;
+}
+@keyframes pi-pop {
+    0% { transform: scale(0.4); opacity: 0; }
+    80% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* ---------- Public pet profile ---------- */
+.pi-public-page {
+    background: var(--pi-gradient);
+    min-height: 100vh;
+    padding: 40px 0;
+}
+.pi-public-card {
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    animation: pi-fade-up 0.6s ease both;
+    background: #fff;
+}
+.pi-public-photo-wrap {
+    position: relative;
+}
+.pi-public-photo-wrap img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background: linear-gradient(135deg,#e0e7ff,#fce7f3);
+    display: block;
+}
+.pi-id-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(255,255,255,0.92);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--pi-primary-dark);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.pi-emoji-badge {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.6rem;
+    margin: -60px auto 10px auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    border: 4px solid #fff;
+    animation: pi-pop 0.6s ease 0.1s both;
+}
+.pi-public-name {
+    font-weight: 800;
+    animation: pi-fade-up 0.5s ease 0.2s both;
+}
+.pi-public-sub {
+    color: #7c7c8a;
+    animation: pi-fade-up 0.5s ease 0.25s both;
+}
+.pi-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 22px;
+    border-bottom: 1px solid #f0f0f5;
+    animation: pi-fade-up 0.5s ease 0.3s both;
+}
+.pi-info-row strong { color: #444; }
+.pi-call-btn {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    border: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 20px rgba(34,197,94,0.35);
+    animation: pi-pulse 2.4s ease-in-out infinite;
+}
+@keyframes pi-pulse {
+    0%, 100% { box-shadow: 0 8px 20px rgba(34,197,94,0.35); }
+    50% { box-shadow: 0 8px 30px rgba(34,197,94,0.6); }
+}
+.pi-footer-brand {
+    text-align: center;
+    margin-top: 18px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ---------- Animated login stage (walking dog + reveal) ---------- */
+.pi-login-stage {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    background: linear-gradient(160deg, #fb923c 0%, #f97316 60%, #ea580c 100%);
+    min-height: 460px;
+    padding: 70px 28px 40px 28px;
+    box-shadow: 0 20px 50px rgba(234,88,12,0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.pi-login-title {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: pi-fade-up 0.5s ease 1.5s forwards;
+}
+.pi-dog-walker {
+    position: absolute;
+    bottom: 300px;
+    width: 100px;
+    height: 78px;
+    animation: pi-dog-walk-in 1.4s cubic-bezier(.3,.6,.4,1) forwards;
+}
+@keyframes pi-dog-walk-in {
+    from { transform: translateX(-140px); }
+    to   { transform: translateX(0); }
+}
+.pi-dog-bounce {
+    width: 100%; height: 100%;
+    animation: pi-dog-bounce 0.28s ease-in-out 5;
+}
+@keyframes pi-dog-bounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-3deg); }
+}
+.pi-dog-leg {
+    animation: pi-dog-leg-swing 0.28s ease-in-out 5;
+    transform-origin: top center;
+}
+.pi-dog-leg.back { animation-delay: 0.14s; }
+@keyframes pi-dog-leg-swing {
+    0%, 100% { transform: rotate(18deg); }
+    50% { transform: rotate(-18deg); }
+}
+.pi-login-fields {
+    width: 100%;
+    max-width: 320px;
+    background: rgba(255,255,255,0.97);
+    border-radius: 16px;
+    padding: 22px;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: pi-fields-in 0.5s ease 1.5s forwards;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+@keyframes pi-fields-in {
+    to { opacity: 1; transform: translateY(0); }
+}
+.pi-login-fields .form-control {
+    border-radius: 10px;
+}
+.pi-login-fields .btn-primary {
+    background: linear-gradient(135deg, #ea580c, #f97316);
+    border-radius: 10px;
+}

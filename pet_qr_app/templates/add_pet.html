@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Add Pet - PetQR{% endblock %}
+{% block content %}
+<h3 class="mb-3">Add a New Pet</h3>
+<form method="POST" enctype="multipart/form-data" class="row g-3">
+  <div class="col-md-6">
+    <label class="form-label">Pet Name *</label>
+    <input type="text" name="pet_name" class="form-control" required>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Pet Type</label>
+    <input type="text" name="pet_type" class="form-control" placeholder="Dog, Cat, etc.">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Breed</label>
+    <input type="text" name="breed" class="form-control">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Age</label>
+    <input type="text" name="age" class="form-control">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Gender</label>
+    <select name="gender" class="form-select">
+      <option value="">Select</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Color</label>
+    <input type="text" name="color" class="form-control">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Photo</label>
+    <input type="file" name="photo" class="form-control" accept="image/*">
+  </div>
+  <hr class="mt-4">
+  <h5>Owner / Contact Info (shown on public profile)</h5>
+  <div class="col-md-6">
+    <label class="form-label">Owner Name</label>
+    <input type="text" name="owner_name" class="form-control">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Phone</label>
+    <input type="text" name="phone" class="form-control">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Email</label>
+    <input type="email" name="email" class="form-control">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Address</label>
+    <input type="text" name="address" class="form-control">
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input type="checkbox" name="show_address" value="1" class="form-check-input" id="showAddress">
+      <label class="form-check-label" for="showAddress">
+        Show this address on the public pet profile (anyone who scans the QR code will see it)
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <label class="form-label">Additional Info</label>
+    <textarea name="additional_info" class="form-control" rows="3" placeholder="Allergies, medical notes, behavior notes..."></textarea>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Save Pet & Generate QR</button>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Cancel</a>
+  </div>
+</form>
+{% endblock %}
